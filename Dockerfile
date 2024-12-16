@@ -39,12 +39,12 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Enable Apache modules
-RUN a2enmod rewrite ssl headers
+RUN a2enmod rewrite ssl headers remoteip
 
 # Backup default Apache and PHP configuration
 RUN mkdir -p /etc/apache2.bak /etc/php.bak && \
-    cp -r /etc/apache2/* /etc/apache2.bak/ && \
-    cp -r /etc/php/* /etc/php.bak/ && \
+    cp -r /etc/apache2/* /etc/apache2.bak/ --preserve=links && \
+    cp -r /etc/php/* /etc/php.bak/ --preserve=links  && \
     mkdir -p /var/www/html && \
     chown -R www-data:www-data /etc/apache2 /etc/php /var/www
 
