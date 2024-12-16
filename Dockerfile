@@ -2,7 +2,10 @@ FROM ubuntu:24.04
 
 LABEL version="0.1" \
       name="LAPBox" \
-      description="A lightweight Docker image for running PHP applications with Apache"
+      description="A lightweight Docker image for running PHP applications with Apache" \
+      org.opencontainers.image.authors="sachin@kekarjawalekar.com" \
+      org.opencontainers.image.source="https://github.com/sachink23/LAPBox" \
+      org.opencontainers.image.documentation="https://github.com/sachink23/LAPBox/blob/master/README.md"
       
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
