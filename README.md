@@ -31,7 +31,7 @@ LAPBox is a lightweight Docker image for running PHP applications with Apache, b
 	-  `/etc/apache2` : Apache configuration directory.
 	-  `/var/log/apache2` : Apache log directory.
 	-  `/var/www` : Web root for your application.
-	-  `/etc/php/` : PHP configuration directory.
+	-  `/etc/php/8.3/apache2/php.ini` : php.ini configuration file.
 
 -  **Built-in Flexibility**: Fully customizable for new or existing projects.
 
@@ -50,7 +50,7 @@ docker build -t lapbox .
 docker run -d \
   -v $(pwd)/www:/var/www \
   -v $(pwd)/config/apache2:/etc/apache2 \
-  -v $(pwd)/config/php:/etc/php/ \
+  -v $(pwd)/config/php.ini:/etc/php/8.3/apache2/php.ini \
   -v $(pwd)/logs:/var/log/apache2 \
   -p 8080:80 -p 8443:443 \
   lapbox

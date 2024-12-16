@@ -56,7 +56,7 @@ RUN chmod +x /usr/local/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 
 # Expose mountable configuration and log directories
-VOLUME ["/etc/apache2", "/var/log/apache2", "/var/www", "/etc/php/"]
+VOLUME ["/etc/apache2", "/var/log/apache2", "/var/www", "/etc/php/8.3/apache2/php.ini"]
 
 # Set working directory
 WORKDIR /var/www/

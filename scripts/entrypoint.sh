@@ -9,7 +9,7 @@ fi
 # Restore PHP configuration if missing
 if [ ! -f /etc/php/8.3/apache2/php.ini ]; then
     echo "Restoring default PHP configuration..."
-    cp -r /etc/php.bak/* /etc/php --preserve=links 
+    cp -r /etc/php.bak/8.3/apache2/php.ini /etc/php/8.3/apache2/php.ini
 fi
 
 # Ensure web root exists
